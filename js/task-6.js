@@ -20,18 +20,17 @@ function createBoxes(amount) {
   container.innerHTML = "";
   let width = 30;
   let height = 30;
-
+  let boxesCode = "";
   for (let i = 0; i < amount; i++) {
     const box = document.createElement(`div`);
     box.style.width = `${width}px`;
     box.style.height = `${height}px`;
 
-    // Increase width and height for the next box
+    boxesCode += `<div style="width: ${width}px; height: ${height}px; background-color: ${getRandomHexColor()};"></div>`;
     width += 10;
     height += 10;
-    box.style.backgroundColor = getRandomHexColor();
-    container.appendChild(box);
   }
+  container.innerHTML = boxesCode;
   inputNumber.value = "";
 }
 
